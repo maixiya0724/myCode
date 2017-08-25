@@ -56,7 +56,7 @@
                      <span class="say">而不是连打个招呼的底气都没有.............</span><br>
                      <span class="say">在她失落的时候，我会带着她去各地游玩.......吃最好的美食，喝最甜的酒.......</span><br>
                      <span class="say">在她不开心的时候，我会陪她一起逛街，买最漂亮的衣服，压最长的马路...........</span><br>
-                     <span class="say">在她落了的时候，我会唱歌给她听，然后默默帮她擦干眼泪，告诉她我一直都在 ,一直都会.........</span><br>
+                     <span class="say">在她失落了的时候，我会唱歌给她听，然后默默帮她擦干眼泪，告诉她我一直都在 ,并且一直都会.........</span><br>
                      <span class="say">在她问我全世界哪里最美的时候，我会轻轻的告诉她，答案是她身边，只要是在她身边......</span><br>
                      <span class="say">这就是我的她，我希望有一天会变成                    我的你..............</span><br>
                      <span class="say">这就是我的故事，我希望有一天也会成为你的故事........</span><br>
@@ -72,8 +72,8 @@
                     <span class="say">我希望，安静的夜路和爸妈走............</span><br>
                     <span class="say">我希望，周末的马路和好友走.............</span><br>
                     <span class="say">我希望，梦想的路我自己走...............</span><br>
-                    <span class="say">我希望，未来的路你愿意跟我走</span><br>
-                   <span class="say">敬礼！！！！撒花！！！！！！</span><br>
+                    <span class="say">我希望，未来的路你愿意跟我走！！！！！！</span><br>
+                   <span class="say">谢谢！！！！！！</span><br>
                    <br>
                     <span class="say"><span class="space"></span> -- 金多虾</span>
                     </div>
@@ -84,7 +84,7 @@
                 </div>
                 <canvas id="canvas" width="1100"  height="680"></canvas>
             </div>
-            <audio src="Love_files/拥抱.mp3"     loop="loop" autoplay="autoplay"></audio>
+            <audio id="Jaudio" src="Love_files/拥抱.mp3"     loop="loop" autoplay="autoplay"></audio>
         </div>
     
     <script>
@@ -92,6 +92,18 @@
 
     <script>
     (function(){
+
+        function audioAutoPlay(id){
+            var audio = document.getElementById(id);
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+            }, false);
+        }
+        
+        audioAutoPlay('Jaudio');
+
+
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
@@ -221,7 +233,7 @@
 
         var textAnimate = eval(Jscex.compile("async", function () {
             var together = new Date();
-            together.setFullYear(2017, 7, 10);
+            together.setFullYear(2017, 07, 10);
             together.setHours(20);
             together.setMinutes(20);
             together.setSeconds(0);
