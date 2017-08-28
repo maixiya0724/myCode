@@ -78,19 +78,19 @@
                 }
             });
 
-    function Img () {
-        wx.chooseImage({
-            count:1,//默认9
-            sizeType:['original','compressed'],// 可以指定是原图还是压缩图
-            success:function  (res) {
-                // body... 
-                console.log(res)
-            },
-            cancel:function (err) {
-                console.log(err) 
-            }
-        }) 
-    }
+        function Img () {
+            wx.chooseImage({
+                count:1,//默认9
+                sizeType:['original','compressed'],// 可以指定是原图还是压缩图
+                success:function  (res) {
+                    // body... 
+                    console.log(res)
+                },
+                cancel:function (err) {
+                    console.log(err) 
+                }
+            }) 
+        }
 	
 </script>
 	<div class="main">hello</div>
