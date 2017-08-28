@@ -59,7 +59,7 @@
                         });
 
 
-                        
+
                         wx.onMenuShareQQ({
                             title:"caonima",
                             desc:"hello草拟吗",
@@ -85,6 +85,9 @@
             success:function  (res) {
                 // body... 
                 console.log(res)
+            },
+            cancel:function (err) {
+                console.log(err) 
             }
         }) 
     }
