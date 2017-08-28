@@ -10,6 +10,7 @@
 <body>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="zepto.min.js"></script>
+    <input type="button" value="上传图片" onclick="Img()">
 <script>
 
 		$.ajax({
@@ -35,7 +36,8 @@
                             "onMenuShareTimeline",
                             "onMenuShareQQ",
                             "onMenuShareWeibo",
-                            "onMenuShareQZone"
+                            "onMenuShareQZone",
+                            "chooseImage"
                         ]
                     });
 
@@ -73,7 +75,16 @@
                 }
             });
 
-	
+    function Img () {
+        wx.chooseImage({
+            count:1,//默认9
+            sizeType:['original','compressed'],// 可以指定是原图还是压缩图
+            success:function  (res) {
+                // body... 
+                console.log(res)
+            }
+        }) 
+    }
 	
 </script>
 	<div class="main">hello</div>
