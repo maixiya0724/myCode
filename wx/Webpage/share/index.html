@@ -55,6 +55,19 @@
                                 console.log("取消分享")
                              }
 
+                        });
+                        wx.onMenuShareQQ({
+                            title:"caonima",
+                            desc:"hello草拟吗",
+                            link:"http:www.baidu.com",
+                            imgUrl:"http://caizhanbao.cn/h5weixin/img/share.png",
+                            type:"link",
+                            success:function  (argument) {
+                            console.log("qq好友")
+                            },
+                            cancel:function (argument) {
+                                console.log("qq失败")
+                            }
                         })
                     })
                    
