@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>分享</title>
+</head>
+<body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="zepto.min.js"></script>
+<script>
+
+		$.ajax({
+                url: "http://60.205.138.173:8080/others/share/signature",
+                type: 'post',
+                data: {
+                    url: location.href.split('#')[0]
+                },
+                success: function (data) { // 在服务器端完成签名，签名用的noncestr和timestamp必须与wx.config中的nonceStr和timestamp相同，
+                    var values = data.value;
+                    var timestamp = values.timestamp;
+                    var nonceStr = values.noncestr;
+                    var signature = values.signature;
+
+                    wx.config({
+                        debug: false,
+                        appId: 'wx8df662bef1a3a461', // 必填，公众号的唯一标识
+                        timestamp: timestamp, // 必填，生成签名的时间戳
+                        nonceStr: nonceStr, // 必填，生成签名的随机串
+                        signature: signature, // 必填，签名，见附录1
+                        // 必填，需要使用的JS接口列表，所有JS接口列表见附录
+                        jsApiList: [
+                            "onMenuShareAppMessage",
+                            "onMenuShareTimeline",
+                            "onMenuShareQQ",
+                            "onMenuShareWeibo",
+                            "onMenuShareQZone"
+                        ]
+                    });
+                }
+            });
+
+	
+	
+</script>
+	<div class="main">hello</div>
+</body>
+</html>
