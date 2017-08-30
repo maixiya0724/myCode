@@ -20,6 +20,8 @@
                     url: location.href.split('#')[0]
                 },
                 success: function (data) { // 在服务器端完成签名，签名用的noncestr和timestamp必须与wx.config中的nonceStr和timestamp相同，
+                    console.log(values)
+
                     var values = data.value;
                     var timestamp = values.timestamp;
                     var nonceStr = values.noncestr;
@@ -46,7 +48,8 @@
                         wx.onMenuShareAppMessage({
                             title:document.title,// 分享的标题就是文本的标题
                             desc:"分享描述",
-                            link:"http://www.caizhanbao.cn/h5weixin/index.html", // 域名必须和公众号后台配置的域名一致
+                            link:"http://www.caizhanbao.cn/h5weixin/", // 域名必须和公众号后台配置的域名一致
+                            imgUrl:"http://caizhanbao.cn/h5weixin/img/share.png",
                             type: 'link', // 分享类型,music、video或link，不填默认为link
                              success: function () { 
                                     console.log("分享成功")
@@ -57,13 +60,11 @@
 
                         });
 
-
-
                         wx.onMenuShareQQ({
                             title:"caonima",
                             desc:"hello草拟吗",
                             link:"http://www.caizhanbao.cn/h5weixin/index.html",
-                            imgUrl:"",
+                            imgUrl:"http://caizhanbao.cn/h5weixin/img/share.png",
                             type:"link",
                             success:function  () {
                                 console.log("qq好友")
@@ -80,6 +81,7 @@
         function Img () {
             wx.chooseImage({
                 count:1,//默认9
+                sourceType: ['album', 'camera'],
                 sizeType:['original','compressed'],// 可以指定是原图还是压缩图
                 success:function  (res) {
                     // body... 
