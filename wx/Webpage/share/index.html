@@ -26,7 +26,7 @@
                     var signature = values.signature;
                     wx.config({
                         debug: false,
-                        appId: 'wx8df662bef1a3a461', // 必填，公众号的唯一标识
+                        appId: 'wx6b71531088f5e36d', // 必填，公众号的唯一标识
                         timestamp: timestamp, // 必填，生成签名的时间戳
                         nonceStr: nonceStr, // 必填，生成签名的随机串
                         signature: signature, // 必填，签名，见附录1
@@ -47,7 +47,6 @@
                             title:document.title,// 分享的标题就是文本的标题
                             desc:"分享描述",
                             link:"http://maoxiya.online/myCode/wx/Webpage/share/index.html", // 域名必须和公众号后台配置的域名一致
-                            imgUrl:"http://caizhanbao.cn/h5weixin/img/share.png",// 分享图标 
                             type: 'link', // 分享类型,music、video或link，不填默认为link
                              success: function () { 
                                     console.log("分享成功")
