@@ -8,6 +8,22 @@
 	<title>分享</title>
 </head>
 <body>
+    <div>
+
+        CPU AMD瑞龙 1400 加 主板 华硕B350  1349
+              蓝宝石 460 2g  659 
+        硬盘:西数1T蓝盘  300 
+        内存:金士顿DDR4    459
+        电源 : 海盗船vs550 299 
+        机箱 : 200 先马
+        总价 3095 
+        再加上优惠券 基本
+        3000块
+        优惠券  10  满499-20 满500 -20 满120-15  会员 满600减 40 满110 减10 
+         满99 -5 
+         满 500 -30 
+
+    </div>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="zepto.min.js"></script>
     <input type="button" value="上传图片" onclick="Img()">
@@ -21,7 +37,6 @@
                 },
                 success: function (data) { // 在服务器端完成签名，签名用的noncestr和timestamp必须与wx.config中的nonceStr和timestamp相同，
                     console.log(values)
-
                     var values = data.value;
                     var timestamp = values.timestamp;
                     var nonceStr = values.noncestr;
@@ -42,7 +57,6 @@
                             "chooseImage"
                         ]
                     });
-
                     wx.ready(function(){
                         //分享给朋友 配置分享的
                         wx.onMenuShareAppMessage({
@@ -57,7 +71,6 @@
                              cancel:function(){
                                 console.log("取消分享")
                              }
-
                         });
 
                         wx.onMenuShareQQ({
@@ -73,8 +86,21 @@
                                 console.log("qq失败")
                             }
                         })
+                        wx.onMenuShareQZone({
+                            title:"hello",
+                            desc:"lalalademaxiya",
+                            link:"http://www.caizhanbao.cn/h5weixin/index.html",
+                            imgUrl:"http://caizhanbao.cn/h5weixin/img/share.png",
+                            success:function (res) {
+                               console.log(res)
+                            },
+                            error:function  (err) {
+                                console.log(err)
+                            }
+                            
+                        })
                     })
-                   
+                    
                 }
             });
 
