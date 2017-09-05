@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>活动</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="main clear" >
+		<div class="activityTime">
+			<p></p>
+			<p></p>
+		</div>
+		<div class="phoneLogin">
+			<input class="input" type="text" placeholder="请输入您的手机号">
+			<input class="login" type="button"  value="确认登录">
+		</div>
+		<div class="activityInfo">
+			<div class="infoHeader"></div>
+			<p>总榜奖励  （共28天）</p>
+			<p>第1名: <span>1888</span> 元彩金+价值<span> 999 </span> 元投注打印机一台</p>
+			<p>第2名: <span>188</span> 元彩金+价值<span> 999 </span> 元投注打印机一台</p>
+			<p>第3名: <span>88</span> 元彩金+价值<span> 999 </span> 元投注打印机一台</p>
+			<p>第4-10名: <span>88</span> 元彩金+价值<span> 30 </span> 元店铺专属定制台卡</p>
+			<p>周榜奖励 （每7天为一个通知周期，共4期）</p>
+			<p>第1名: <span>588</span> 元彩金</p>
+			<p>第2名: <span>188</span> 元彩金</p>
+			<p>第3名: <span>88</span> 元彩金</p>
+			<p>第4-10名: <span>58</span> 元彩金</p>
+		</div>
+		<div class="activityInfo">
+			<div class="infoHeader"></div>
+			<p>1.合买成长值=合买投注成单金额+合买中奖金额</p>
+			<p>2.凡通过“微彩站”或彩民端APP参与的合买，均为有效</p>
+			<p>3.合买成单与合买中奖，均可获赠相应合买成长值，订单以
+   下单时间为准</p>
+			<p>4.合买成长值进入周榜或总榜前10名的彩店，均可获得相应 
+   奖励</p>
+			<p>5.活动分为4次周榜和1次总榜，业主可重复获得奖励机会；</p>
+			<p>6.支持合买彩种：双色球、大乐透、竞彩足球、胜负彩、任
+   九、3D</p>
+			<p>7.店主所获彩金奖励可用于派奖，不可提现</p>
+			<p>8.本活动最终解释权归彩站宝所有</p>
+			
+		</div>
+	</div>
+</body>
+<script src="js/lib/rem.js"></script>
+<script src="js/lib/zepto.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>	
+<script src="js/lib/lib.js"></script>
+<script src="js/lib/mock-min.js"></script>
+<script>
+	//mock.js
+	Mock.mock('http://p.ooss', { // url为自定义,只要请求的时候一致就行
+	   "code|1-3":100,
+	   "data":"{age:16}",
+	   "message":"请求错误"
+	});
+
+		
+
+
+window.onload = function  (argument) {
+	//验证手机号
+	$(".login").on("click",function(e){
+		var inputValue = $(".input").val()
+		if(inputValue==""){
+			 Alert({
+                content: "手机号不能为空",
+                time: 2000
+            })
+			return;
+		}
+		if(!(/^1[3|4|5|7|8][0-9]\d{8}$/.test(inputValue))){
+			Alert({
+                content: "请输入正确的手机号",
+                time: 2000
+            })
+			return ;
+		}
+		$.ajax({
+			type:"GET",
+			url:"http://p.ooss",
+			dataType: 'json',
+			success:function(res){
+				console.log(res.code)
+				if (res.code !== 2) {
+                    Alert({
+                        content: res.message,
+                        time: 2000
+                    })
+                    return;
+                } else {
+
+                    location.href = "index2.html";
+
+                }
+			},
+			error:function(err){
+				Alert({
+                    content: err.message,
+                    time: 2000
+                 })
+			}
+		})
+	})
+
+	 weixinShareConfig({// 配置微信分享
+        shareTitle: document.title,
+        shareLink: "http://www.caizhanbao.cn/h5weixin/",
+        shareImgUrl: "http://caizhanbao.cn/h5weixin/img/share.png",
+        shareDesc: "点击进入"
+    });
+
+} 
+
+</script>
+
+</html>

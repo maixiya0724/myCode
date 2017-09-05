@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>活动</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="main clear" >
+		<div class="activityTime">
+			<p></p>
+			<p></p>
+		</div>
+		<div class="myInfo">
+			<p class="myName"> <i class="shopName"></i> 您已成功登录合买成长系统</p>
+			<p>您当前的合买成长值为  <span class="shopLive"></span></p>
+			<p>当前排名为  <span class="shopNum"></span>  名</p>
+		</div>
+		<div class="listInfo">
+			<div class="tab">
+				<div class="tabOne active">总榜</div>
+				<div class="tabTwo">周榜</div>
+			</div>
+			<div class="listArr">
+				<div class="listItem listTitle">
+					<div class="listItemNum">排名</div>
+					<div class="listItemName">店铺名称</div>
+					<div class="listItemLive ">成长值</div>
+				</div>
+				<div  id="list">
+					
+				</div>
+			</div>
+		</div>
+		<div class="myShare">
+			<div class="submit"></div>
+			<div class="share"></div>
+		</div>
+	
+	</div>
+</body>
+<script src="js/lib/rem.js"></script>
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/mock-min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>	
+<script src="js/lib/lib.js"></script>
+<script>
+//模拟数据
+	Mock.mock("myInfo",{
+		"name":"五月天",
+		"num":"1000",
+		"live":"2000",
+		"code":2,
+		"message":"请求错误"
+	})
+	Mock.mock("weekList",{
+		"list|10-15":[{"num":"1","name":"五道口彩票店","code":"1"}],
+		"code|2":100,
+		"message":"请求错误"
+	})
+	Mock.mock("nowList",{
+		"list|10-15":[{"num":"10","name":"知春路放大放大彩票店","code":"34343"}],
+		"code|2":100,
+		"message":"请求错误"
+	})
+
+window.onload = function  (argument) {
+	var activeValue = true;
+	 weixinShareConfig({// 配置微信分享
+        shareTitle: document.title,
+        shareLink: "http://www.caizhanbao.cn/h5weixin/",
+        shareImgUrl: "http://caizhanbao.cn/h5weixin/img/share.png",
+        shareDesc: "点击进入"
+    });
+	var urlPhone = GetRequest().phone
+	Alert({
+        content: urlPhone,
+        time: 2000
+    })
+	login(urlPhone)
+	ajaxList()
+	$(".tabOne").on("click",function(){
+		$(".tabTwo").removeClass('active')
+		$(".tabOne").addClass('active')
+		ajaxList()
+	})
+	$(".tabTwo").on("click",function(){
+		$(".tabOne").removeClass('active')
+		$(".tabTwo").addClass('active')
+		ajaxWeekList()
+	})
+	$(".submit").on("click",function(){
+		window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd3a974926eee21e2&redirect_uri=http%3A%2F%2Fwechat.xiaodianzhushou.com/wechat/home.html&response_type=code&scope=snsapi_base&state=storeId:ds200&connect_redirect=1#wechat_redirect"
+	})
+} 
+
+	// 获取url参数
+	 function GetRequest() {   
+	   var url = location.search; //获取url中"?"符后的字串   
+	   var theRequest = new Object();   
+	   if (url.indexOf("?") != -1) {   
+	      var str = url.substr(1);   
+	      strs = str.split("&");   
+	      for(var i = 0; i < strs.length; i ++) {   
+	         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);   
+	      }   
+	   }   
+	   return theRequest;   
+	}
+	//获取店主信息ajax
+	function login (phone) {
+		$.ajax({
+			type:"GET",
+			dataType: 'json',
+			url:"myInfo",
+			/*data:{
+				phone:phone
+			},*/
+			success:function (res) {
+				if(res.code!==2){
+					Alert({
+                        content: res.message,
+                        time: 2000
+                    })
+				}else {
+					res.name?$(".shopName").text(res.name):$(".shopName").text("店主")
+					res.live?$(".shopLive").text(res.live):$(".shopLive").text("1000")
+					res.num?$(".shopNum").text(res.num):$(".shopNum").text("54")
+				}
+			}
+
+		})
+	}
+	//请求总榜
+	function ajaxList () {
+		$.ajax({
+			type:"GET",
+			dataType:"json",
+			url:"nowList",
+			success:function(res){
+				if(res.code!=2){
+					Alert({
+                        content: res.message,
+                        time: 2000
+                    })
+				}else {
+					if(res.list){
+						var list = res.list 
+						function returnList(){
+							var itemArr = ''
+							list.map(function(item,index){
+									itemArr+='<div class="listItem"><div class="listItemNum">'+item.num+'</div><div class="listItemName">'+item.name+'</div><div class="listItemLive ">'+item.code+'</div></div>'	
+							})
+							return itemArr
+						}
+						$("#list").html(returnList())
+					}else{
+						Alert({
+	                        content: "后台数据为空",
+	                        time: 2000
+	                    })
+					}
+				}
+			}
+		})
+	}
+
+	//请求周榜
+	function ajaxWeekList () {
+		$.ajax({
+			type:"GET",
+			dataType:"json",
+			url:"weekList",
+			success:function(res){
+				if(res.code!=2){
+					Alert({
+                        content: res.message,
+                        time: 2000
+                    })
+				}else {
+					if(res.list){
+
+						var list = res.list 
+						function returnList(){
+							var itemArr = ''
+							list.map(function(item,index){
+									itemArr+='<div class="listItem"><div class="listItemNum">'+item.num+'</div><div class="listItemName">'+item.name+'</div><div class="listItemLive ">'+item.code+'</div></div>'	
+							})
+							return itemArr
+						}
+						$("#list").html(returnList())
+					}else{
+						Alert({
+	                        content: "后台数据为空",
+	                        time: 2000
+	                    })
+					}
+				}
+			}
+		})
+	}
+
+</script>
+
+</html>

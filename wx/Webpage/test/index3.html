@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>活动</title>
+	<style>
+	body{
+		background: #e33b53;
+		color: #fff;
+	}
+	.title{
+		width: 100%;
+		text-align: center;
+		font-size: 30px;
+	}
+		 .listArr{
+			width: 100%;
+			overflow-y: scroll;
+			font-size: 14px !important;
+			color: #fff;
+		}
+
+		 .listArr .listItem {
+			width: 100%;
+			height: 0.73rem;
+			border-bottom: 1px solid #f1f1f1;
+			font-size: 16px;
+			color: #fff;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: row;
+			        flex-direction: row;
+			-ms-flex-pack: distribute;
+			    justify-content: space-around;
+			-webkit-box-align: center;
+			    -ms-flex-align: center;
+			      align-items: center;
+		}
+		.listArr .listItem .listItemTime{
+			width: 1.0rem;
+			text-align: center;
+			 font-size: 14px;
+		}
+		 .listArr .listItem .listItemNum{
+			width: 1.15rem;
+			text-align: center;
+			font-size: 14px !important;
+		}
+		.listArr .listItem .listItemName{
+			width: 3.0rem;
+			text-align: center;
+			 font-size: 14px ;
+		}
+		 .listArr .listItem .listItemLive{
+			width: 1.3rem;
+			text-align: center;
+			 font-size: 14px ;
+		}
+	</style>
+</head>
+<body>
+<h1 class="title">历史排名</h1>
+	<div class="listArr">
+		<div class="listItem listTitle">
+			<div class="listItemTime">日期</div>
+			<div class="listItemNum">排名</div>
+			<div class="listItemName">店铺名称</div>
+			<div class="listItemLive ">成长值</div>
+		</div>
+		<div  id="list">
+			
+		</div>
+	</div>	
+</body>
+<script src="js/lib/rem.js"></script>
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/mock-min.js"></script>
+
+<script>
+//模拟数据
+	
+	Mock.mock("weekList",{
+		"list|10-15":[{"num":"1","name":"五道口彩票店","code":"1","time":"1"}],
+		"code|2":100,
+		"message":"请求错误"
+	})
+
+window.onload = function  (argument) {
+	ajaxWeekList()
+	var date = (new Date).getDay()
+	console.log(date)
+} 
+
+	//请求周榜
+	function ajaxWeekList () {
+		$.ajax({
+			type:"GET",
+			dataType:"json",
+			url:"weekList",
+			success:function(res){
+				if(res.code!=2){
+					Alert({
+                        content: res.message,
+                        time: 2000
+                    })
+				}else {
+					if(res.list){
+
+						var list = res.list 
+						function returnList(){
+							var itemArr = ''
+							list.map(function(item,index){
+									itemArr+='<div class="listItem"><div class="listItemNum">'+item.num+'</div><div class="listItemTime">'+item.time+'</div><div class="listItemName">'+item.name+'</div><div class="listItemLive ">'+item.code+'</div></div>'	
+							})
+							return itemArr
+						}
+						$("#list").html(returnList())
+					}else{
+						Alert({
+	                        content: "后台数据为空",
+	                        time: 2000
+	                    })
+					}
+				}
+			}
+		})
+	}
+
+</script>
+
+</html>

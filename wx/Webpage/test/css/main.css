@@ -1,0 +1,215 @@
+/*样式重置*/
+
+{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:none;-webkit-user-select:none;-ms-user-select:none;-moz-user-select:none;user-select:none;font-family:Arial, "微软雅黑";}
+img{border:none;max-width:100%;vertical-align:middle;}
+body,p,form,input,button,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6{margin:0;padding:0;list-style:none;overflow-x:hidden}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+input,textarea{-webkit-user-select:text;-ms-user-select:text;-moz-user-select:text;user-select:text;-webkit-appearance:none;font-size:1em;line-height:1.5em;}
+table{border-collapse:collapse;}
+input,select,textarea{outline:none;border:none;background:none;}
+a{outline:0;cursor:pointer;*star:expression(this.onbanner=this.blur());}
+a:link,a:active{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{color:#f00;text-decoration:underline;}
+a{text-decoration:none;-webkit-touch-callout:none;}
+em,i{font-style:normal;}
+li,ol{list-style:none;}
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {    width: 5px;height: 100px;}/* 滚动槽 */::-webkit-scrollbar-track {  border-radius: 5px;}/* 滚动条滑块 */::-webkit-scrollbar-thumb { height: 100px;   border-radius: 5px;    background: #80141c;    }::-webkit-scrollbar-thumb:window-inactive {  background: #80141c;}
+.clear:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.fl{float:left;}
+.fr{float:right;}
+body{ margin:0 auto;}
+
+
+/*正文开始*/
+.main{
+	width: 100%;
+	height: 21.7rem;
+	background-image: url("../img/bg.jpg");
+	background-size: 100% 100%;
+}
+.activityTime{
+	padding-top: 3.25rem;
+}
+.activityTime p{
+	text-align: center;
+	font-size: 12px;
+	height: 16px;
+	line-height: 16px;
+	color: #fff;
+
+}
+.phoneLogin{
+	width: 6.66rem;
+	height: 0.9rem;
+	margin: 0 auto;
+	margin-top: 0.5rem;
+	margin-bottom: 20px;
+}
+
+.phoneLogin input{
+	border-radius: 10px;
+	float: left;
+}
+.phoneLogin input[type="text"]{
+	font-size: 14px;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	background: #fff;
+	width: 4.5rem;
+	border: 1px solid #b169fa;
+	margin-right: 0.1rem;
+	text-indent: 10px;
+	color: #999;
+}
+.phoneLogin input[type="button"]{
+	font-size: 16px;
+	color: #b14240;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	background: #ffdd99;
+	width: 2rem;
+}
+.activityInfo{
+	width: 6.66rem;
+	background: #c72e42;
+	margin:0 auto;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top:15px; 
+	padding-bottom: 20px;
+}
+.infoHeader{
+	width: 5.8rem;
+	height: 0.37rem;
+	margin:0 auto;
+	background-image: url("../img/top.jpg");
+	background-size: cover;
+	font-size: 12px;
+	margin-bottom: 0.4rem;
+}
+.activityInfo p{
+	line-height: 0.45rem;
+	color: #fdcb8b;
+	font-size: 12px;
+}
+.activityInfo p span{
+	font-size: 14px;
+	color: #fff;
+}
+
+/*排行页*/
+.myInfo{
+	margin-top: 0.6rem;
+}
+.myInfo p{
+	font-size: 14px;
+	color: #fdcb8b;
+	line-height: 0.5rem;
+	text-align: center;
+}
+.myInfo p span{
+	font-size:16px;
+	color: #fff;
+}
+.myInfo .myName{
+	font-size: 12px !important;
+	line-height: 0.5rem;
+	color: #fdcb8b;
+}
+.listInfo{
+	margin:15px;
+	height: 8.2rem;
+	border-radius: 5px;
+	background: #fff;
+	padding:0 0.2rem 0 0.2rem;
+}
+.listInfo .tab{
+	height: 0.9rem;
+	width: 100%;
+	color:#6d6d6d;
+}
+.listInfo .tab div {
+	width: 50%;
+	height: 100%;
+	line-height: 0.9rem;
+	text-align: center;
+	font-size: 20px;
+	float: left;
+	font-weight: 500;
+}
+.listInfo .listArr{
+	width: 100%;
+	height: 6.5rem;
+	overflow-y: scroll;
+}
+
+.listInfo .listArr .listItem {
+	width: 100%;
+	height: 0.73rem;
+	border-bottom: 1px solid #f1f1f1;
+	font-size: 16px;
+	color: #6d6d6d;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	      align-items: center;
+
+}
+.listInfo .listArr .listItem .listItemNum{
+	width: 1.15rem;
+	text-align: center;
+}
+.listInfo .listArr .listItem .listItemName{
+	width: 4.0rem;
+	text-align: center;
+}
+.listInfo .listArr .listItem .listItemLive{
+	width: 1.3rem;
+	text-align: center;
+}
+
+.listInfo .listArr .listTitle{
+	height: 0.6rem;
+	background: #eeeeee;
+}
+
+.active {
+	color: #b75553;
+	border-bottom: 1px solid #b75553;
+}
+.myShare{
+	width: 100%;
+	margin-top: 1.15rem;
+
+}
+.myShare .submit {
+	width: 5.23rem;
+	height: 0.95rem;
+	margin:0 auto;
+	background: url("../img/submit.jpg");
+	background-size: 100% 100%;
+
+}
+.myShare .share{
+	width: 100%;
+	height: 0.82rem;
+	margin-top: 0.3rem;
+	background: url("../img/a.jpg");
+	background-size: 100% 100%;
+}
+
