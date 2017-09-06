@@ -18,7 +18,7 @@
             this.alert.style.right = 0;
             this.alert.style.zIndex = 9999;
             var alert = document.createElement("div");
-            alert.style.position = "fixed";
+            alert.style.position = "absolute";
             alert.style.width = "250px";
             alert.style.height = "50px";
             alert.style.background = "grey";
@@ -33,7 +33,7 @@
             alert.style.color = "#fff";
             alert.style.borderRadius = "5px";
             var title = document.createElement("div");
-            title.style.position = "absolute";
+            title.style.position = "fixed";
             title.style.height = "15px";
             title.style.top = 0;
             title.innerHTML = this.title;
