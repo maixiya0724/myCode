@@ -18,12 +18,12 @@
             this.alert.style.right = 0;
             this.alert.style.zIndex = 9999;
             var alert = document.createElement("div");
-            alert.style.position = "absolute";
+            alert.style.position = "fixed";
             alert.style.width = "250px";
             alert.style.height = "50px";
             alert.style.background = "grey";
             alert.style.zIndex = "9999";
-            alert.style.top = "100px";
+            alert.style.top = 0;
             alert.style.bottom = 0;
             alert.style.left = 0;
             alert.style.right = 0;
