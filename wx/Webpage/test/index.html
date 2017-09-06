@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>活动</title>
+	<title>彩站宝成长系统快来一起搞事情</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 			<p></p>
 		</div>
 		<div class="phoneLogin">
-			<input class="input" type="text" placeholder="请输入您的手机号">
+			<input class="input" value="" type="text" placeholder="请输入您的手机号">
 			<input class="login" type="button"  value="确认登录">
 		</div>
 		<div class="activityInfo">
@@ -67,6 +67,7 @@ window.onload = function  (argument) {
 	//验证手机号
 	$(".login").on("click",function(e){
 		var inputValue = $(".input").val()
+		$(".input").val("")
 		if(inputValue==""){
 			 Alert({
                 content: "手机号不能为空",
@@ -81,6 +82,7 @@ window.onload = function  (argument) {
             })
 			return ;
 		}
+		localStorage.setItem("shopPhone",inputValue)
 		$.ajax({
 			type:"GET",
 			url:"http://p.ooss",
@@ -95,6 +97,7 @@ window.onload = function  (argument) {
                     return;
                 } else {
 
+                	// 必须是店主才能跳转
                     location.href = "index2.html";
 
                 }

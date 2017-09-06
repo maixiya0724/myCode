@@ -14,7 +14,7 @@
 			<p></p>
 		</div>
 		<div class="myInfo">
-			<p class="myName"> <i class="shopName"></i> 您已成功登录合买成长系统</p>
+			<p class="myName"> <i class="shopName"></i>  已成功登录合买成长系统</p>
 			<p>您当前的合买成长值为  <span class="shopLive"></span></p>
 			<p>当前排名为  <span class="shopNum"></span>  名</p>
 		</div>
@@ -30,7 +30,6 @@
 					<div class="listItemLive ">成长值</div>
 				</div>
 				<div  id="list">
-					
 				</div>
 			</div>
 		</div>
@@ -81,6 +80,7 @@ window.onload = function  (argument) {
     })
 	login(urlPhone)
 	ajaxList()
+
 	$(".tabOne").on("click",function(){
 		$(".tabTwo").removeClass('active')
 		$(".tabOne").addClass('active')
@@ -92,7 +92,7 @@ window.onload = function  (argument) {
 		ajaxWeekList()
 	})
 	$(".submit").on("click",function(){
-		window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd3a974926eee21e2&redirect_uri=http%3A%2F%2Fwechat.xiaodianzhushou.com/wechat/home.html&response_type=code&scope=snsapi_base&state=storeId:ds200&connect_redirect=1#wechat_redirect"
+		window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.caizhanbaoproject.tianjingcaimin.dianzhu';
 	})
 } 
 
@@ -111,6 +111,8 @@ window.onload = function  (argument) {
 	}
 	//获取店主信息ajax
 	function login (phone) {
+		var phone = localStorage.getItem("shopPhone")
+		console.log(phone)
 		$.ajax({
 			type:"GET",
 			dataType: 'json',
