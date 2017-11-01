@@ -44,6 +44,7 @@
                      <span class="say">很不会说话...........</span><br>
                      <span class="say">很平凡...............</span><br>
                      <span style="margin-top: 10px;" class="say">很神经.............</span><br> 
+                    
                      <span class="say">但是我一直都在努力............</span><br>
                      <span class="say">努力让自己变得优秀............</span><br>
                      <span class="say">努力挣钱，只为了让别人看得起...........</span><br>
@@ -231,7 +232,7 @@
 
         var textAnimate = eval(Jscex.compile("async", function () {
             var together = new Date();
-            together.setFullYear(2017/10/15);
+            together.setFullYear(2017, 09, 15);
             together.setHours(20);
             together.setMinutes(20);
             together.setSeconds(0);
@@ -244,6 +245,7 @@
                 $await(Jscex.Async.sleep(1000));
             }
         }));
+
         var runAsync = eval(Jscex.compile("async", function () {
             $await(seedAnimate());
             $await(growAnimate());
