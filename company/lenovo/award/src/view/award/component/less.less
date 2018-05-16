@@ -1,0 +1,512 @@
+
+
+     .px2rem(@name, @px){
+        @{name}: unit(@px / 100, rem);
+    }
+    .multiPx2rem(@name, @top, @right, @bottom, @left) {
+        @{name}-top: unit(@top / 100, rem);
+        @{name}-right: unit(@right / 100, rem);
+        @{name}-bottom: unit(@bottom / 100, rem);
+        @{name}-left: unit(@left / 100, rem);
+    }
+
+.luckyAwardMain{
+      .px2rem(width,494);
+      .px2rem(height,637);
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      .title{
+        display: block;
+        .px2rem(width,179);
+        .px2rem(height,49);
+        background: url("../../../../static/img/8.png");
+        background-size: 100% 100%;
+        .px2rem(font-size,31);
+        text-align: center;
+        margin: 0 auto;
+        .px2rem(margin-top,32);
+        .px2rem(margin-bottom,24);
+      }
+      .cricle{
+        .px2rem(width,494);
+        .px2rem(height,494);
+        background: url("../../../../static/img/c.png");
+        background-size: 100% 100%;
+        position:relative;
+        li{
+          .px2rem(width,80);
+          .px2rem(height,80);
+          margin: 0 auto;
+            position:absolute;
+            left:50%;
+            //transform-origin:,300%;
+            transform: translateX(-50%);
+          .awardImg{
+            .px2rem(width,70);
+            .px2rem(height,70);
+          }
+        }
+        li:nth-child(1) .awardImg{
+          position:absolute;
+          z-index: 9999;
+          .px2rem(left,48);
+          .px2rem(top,50);
+          transform: rotate(0deg);
+          transform-origin: center center;
+        }
+        li:nth-child(2) .awardImg{
+          position:absolute;
+          .px2rem(left,123);
+          .px2rem(top,90);
+          transform: rotate(60deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+         li:nth-child(3) .awardImg{
+          position:absolute;
+          .px2rem(left,165);
+          .px2rem(top,167);
+          transform: rotate(110deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+         li:nth-child(4) .awardImg{
+          position:absolute;
+          .px2rem(left,165);
+          .px2rem(top,257);
+          transform: rotate(180deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+          li:nth-child(5) .awardImg{
+          position:absolute;
+          .px2rem(left,130);
+          .px2rem(top,340);
+          transform: rotate(90deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+         li:nth-child(6) .awardImg{
+          position:absolute;
+          .px2rem(width,54);
+          .px2rem(height,68);
+          .px2rem(left,60);
+          .px2rem(top,380);
+          transform: rotate(80deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+        li:nth-child(7) .awardImg{
+          position:absolute;
+          .px2rem(left,-35);
+          .px2rem(top,380);
+          .px2rem(width,59);
+          .px2rem(height,69);
+          transform: rotate(90deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+           li:nth-child(8) .awardImg{
+          position:absolute;
+          .px2rem(left,-120);
+          .px2rem(top,330);
+          transform: rotate(-30deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+         li:nth-child(9) .awardImg{
+          position:absolute;
+          .px2rem(left,-165);
+          .px2rem(top,250);
+          transform: rotate(30deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+         li:nth-child(10) .awardImg{
+          position:absolute;
+          .px2rem(width,96);
+          .px2rem(height,69);
+          .px2rem(left,-175);
+          .px2rem(top,163);
+          transform: rotate(90deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+           li:nth-child(11) .awardImg{
+          position:absolute;
+          .px2rem(width,96);
+          .px2rem(height,69);
+          .px2rem(left,-125);
+          .px2rem(top,85);
+          transform: rotate(155deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+           li:nth-child(12) .awardImg{
+          position:absolute;
+          .px2rem(width,96);
+          .px2rem(height,92);
+          .px2rem(left,-52);
+          .px2rem(top,32);
+          transform: rotate(210deg);
+          transform-origin: center center;
+          z-index: 9999;
+        }
+      }
+      .start{
+          .px2rem(width,126);
+          .px2rem(height,160);
+          position: absolute;
+          .px2rem(top,255);
+          left:50%;
+          transform: translateX(-50%);
+          background: url("../../../../static/img/start.png");
+          background-size: 100% 100%;
+          cursor: pointer;
+          z-index: 11;
+        }
+    } 
+
+    //幸运抽奖弹窗
+    
+    .alert{
+      .px2rem(width,290);
+      .px2rem(height,400);
+      background:#fff;
+      position:fixed;
+      z-index: 1000000; 
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      display: none;
+      overflow:hidden;
+      .main{
+        .px2rem(width,265);
+        .px2rem(height,315);
+        overflow:hidden;
+        background: url(../../../../static/img/alert.png);
+        background-size: 100% 100%;
+        margin: 0 auto;
+        .px2rem(margin-top,60);
+        .textInfo{
+          .px2rem(font-size,16);
+          width: 100%;
+          text-align: center;
+          color: #e29871; 
+          .px2rem(margin-top,25);
+        }
+        .prize{
+           color: #e29871; 
+          .px2rem(font-size,12);
+          text-align: center; 
+          .px2rem(width,150);
+          margin: 0 auto;
+          position: relative;
+          .px2rem(left,0.05rem);
+        }
+
+        .inputDiv{
+          .px2rem(width,200);
+          .px2rem(height,25);
+          .px2rem(line-height,25);
+          color: #fff;
+          .px2rem(font-size,14);
+          margin: 0 auto;
+          .px2rem(margin-top,60);
+          .px2rem(margin-bottom,10);
+
+          .text{
+            .px2rem(width,150);
+            .px2rem(height,25);
+            .px2rem(line-height,23);
+            text-align: center;
+            .px2rem(font-size,12);
+            .px2rem(margin-left,10);
+            overflow:hidden;
+            border:1px solid #ee8a36;
+            background: none;
+            float: left;
+            .px2rem(border-radius,5); 
+            outline:none;
+            text-indent: 0.05rem;
+
+          }
+
+          .text:focus{
+            border:1px solid #ee8a36;
+          }
+          .btn{
+            display: block;
+            .px2rem(width,36);
+            .px2rem(height,23);
+            .px2rem(line-height,23);
+            .px2rem(font-size,14);
+            text-align: center;
+            background: #ee8a36;
+            color: #fff;
+            float: left;
+            .px2rem(margin-left,3);
+            .px2rem(margin-top,1);
+            .px2rem(border-radius,5); 
+          }
+        }
+      }
+      .close{
+        .px2rem(width,25);
+        .px2rem(height,25);
+        background: url(../../../../static/img/close.png);
+        background-size: 100% 100%;
+        position: absolute;
+
+        .px2rem(top,10);
+        .px2rem(right,10);
+      }
+      .textColor{
+        .px2rem(width,210);
+        margin: 0 auto;
+        .px2rem(line-height,20);
+        color: #eebb7c;
+        .px2rem(font-size,10);
+        text-align: center;
+        
+        span{
+          color:#ea8c3d; 
+        } 
+
+      }
+      .btn{
+        .px2rem(width,170);
+        .px2rem(height,35);
+        .px2rem(line-height,35);
+        text-align: center;
+        background: #f8d84e;
+        .px2rem(font-size,18);
+        color: #cf4840;
+        .px2rem(margin-left,50);
+        .px2rem(margin-top,10);
+        .px2rem(border-radius,5);
+
+      }
+
+    }
+
+// 豪华抽奖  
+.superPrize{
+    .px2rem(width,450);
+    .px2rem(height,550); 
+    float: right;
+    .superBtn{
+      .px2rem(width,180);
+      .px2rem(height,50);
+      .px2rem(line-height,50);
+      background: #86204f;
+      text-align: center;
+      color: #f7d466;
+      .px2rem(border-radius,5);
+      margin: 0 auto;
+      .px2rem(margin-top,26);
+      .px2rem(margin-bottom,30);
+    }
+    .superPrize{
+      .px2rem(width,446);
+      .px2rem(height,446);
+      background: url("../../../../static/img/f.png");
+      background-size: 100% 100%;
+      overflow:hidden;
+      #lottery{
+        .px2rem(width,400);
+        .px2rem(height,390);
+        margin: 0 auto;
+        .px2rem(margin-top,20);
+        position: relative;
+        
+       .lottery-unit:nth-child(4){
+        transform: translateX(2.65rem);
+      }
+       .lottery-unit:nth-child(5){
+        transform: translate(1.3rem,1.3rem);
+      }
+      .lottery-unit:nth-child(6){
+        transform: translate(-1.3rem,1.3rem);
+      }
+      .lottery-unit:nth-child(7){
+        transform: translate(0,0);
+      }
+      .lottery-unit:nth-child(8){
+        transform: translate(-1.33rem,-1.3rem);
+      } 
+      .start{
+          .px2rem(width,120);
+          .px2rem(height,120);
+          .px2rem(border-radius,10);
+          background:url(../../../../static/img/startBtn.png);
+          background-size: 100% 100%;
+          position: absolute;
+          top: 1.3rem;
+          left: 1.35rem;
+          overflow:hidden;
+           .px2rem(margin-left,4);
+          .px2rem(margin-top,4);
+          p{
+             display: block;
+            .px2rem(height,28);
+            width: 100%;
+            .px2rem(line-height,28);
+            text-align: center;
+            color: #fff;
+            .px2rem(font-size,12);
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
+      }
+        .item{
+          .px2rem(width,125);
+          .px2rem(height,125);
+          .px2rem(border-radius,10);
+          background: rgba(0,0,0,0.2);
+          position: relative;
+          overflow:hidden;
+          float: left;
+          .px2rem(margin-left,4);
+          .px2rem(margin-right,4);
+          .px2rem(margin-top,4);
+         border:2px solid #f7d466;
+
+          .img{
+           .px2rem(width,120);
+           .px2rem(height,120);
+           background-size: contain;
+           background-repeat: no-repeat;
+           background-position: center center;
+          }
+          p{
+            display: block;
+            .px2rem(height,28);
+            width: 100%;
+            .px2rem(line-height,28);
+            text-align: center;
+            color: #fff;
+            .px2rem(font-size,12);
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
+        }
+        .active{
+         border:2px solid #452143;
+          
+        }
+      }
+    }
+}
+// 豪华抽奖弹窗
+
+.superAlert{
+      .px2rem(width,290);
+      .px2rem(height,400);
+      background:#fff;
+      position:fixed;
+      z-index: 1000000; 
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    display: none;
+      overflow:hidden;
+      .main{
+        .px2rem(width,265);
+        .px2rem(height,315);
+        overflow:hidden;
+        background: url(../../../../static/img/alert.png);
+        background-size: 100% 100%;
+        margin: 0 auto;
+        .px2rem(margin-top,60);
+        .textInfo{
+          .px2rem(font-size,16);
+          width: 100%;
+          text-align: center;
+          color: #e29871; 
+          .px2rem(margin-top,25);
+        }
+        .prize{
+           color: #e29871; 
+          .px2rem(font-size,12);
+          text-align: center; 
+          .px2rem(width,150);
+          margin: 0 auto;
+          position: relative;
+          left: 0.05rem;
+          .px2rem(left,0.05);
+        }
+
+        .inputDiv{
+          .px2rem(width,200);
+          .px2rem(height,25);
+          .px2rem(line-height,25);
+          color: #fff;
+          .px2rem(font-size,14);
+          margin: 0 auto;
+          .px2rem(margin-top,60);
+          .px2rem(margin-bottom,10);
+          .text{
+            .px2rem(width,110);
+            .px2rem(height,22);
+            margin: 0 auto;
+            .px2rem(margin-top,50);
+            .px2rem(margin-left,50);
+            border:1px solid #ee8a36;
+            background: none;
+            .px2rem(border-radius,5); 
+            outline:none;
+            text-indent: 0.05rem;
+            color: #f2cb84;
+
+          }
+
+          .text:focus{
+            border:1px solid #ee8a36;
+          }
+        
+        }
+      }
+      .close{
+        .px2rem(width,25);
+        .px2rem(height,25);
+        background: url(../../../../static/img/close.png);
+        background-size: 100% 100%;
+        position: absolute;
+
+        .px2rem(top,10);
+        .px2rem(right,10);
+      }
+      .textColor{
+        .px2rem(width,210);
+        margin: 0 auto;
+        .px2rem(line-height,20);
+        color: #eebb7c;
+        .px2rem(font-size,10);
+        text-align: center;
+        
+        span{
+          color:#ea8c3d; 
+        } 
+
+      }
+      .btn{
+        .px2rem(width,170);
+        .px2rem(height,35);
+        .px2rem(line-height,35);
+        text-align: center;
+        background: #f8d84e;
+        .px2rem(font-size,18);
+        color: #cf4840;
+        .px2rem(margin-left,55);
+        .px2rem(margin-top,80);
+        .px2rem(border-radius,5);
+
+      }
+
+    }
