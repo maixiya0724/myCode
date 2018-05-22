@@ -51,7 +51,7 @@ module.exports = {
                 changeOrigin: true
             },
            '/lenovoId':{
-                target:'https://privilege.lenovo.com.cn' ,
+                target:'https://privilege.lenovo.com.cn',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/lenovoId': ''
