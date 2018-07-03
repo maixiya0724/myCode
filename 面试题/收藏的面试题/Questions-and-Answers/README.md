@@ -818,6 +818,38 @@
 - overflow: scroll时不能平滑滚动的问题怎么处理？
 
 - 有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度。
+		
+		<div class="content">
+
+		<div class="top"></div>
+
+		<div class="bottom"></div>
+
+		</div>
+
+
+		//方法1，绝对布局
+
+		*{ margin: 0; padding: 0;}
+
+		.content{ width: auto; height: 200px;//演示方便，所以设置了一个高度 border: 5px solid #000; position: relative;}
+
+		.top{ height: 100px; background: red;}
+
+		.bottom{ position: absolute; top: 100px; right: 0px; left: 0px; bottom: 0px; background: green;}
+
+
+
+
+
+		//方法2，flex
+
+		.content{ display: flex; flex-flow: column wrap; 纵向不换行 border: 1px solid blue; }
+
+		.top{ height: 100px; background: red; }
+
+		.bottom{ flex:1; background: green; }
+
 
 - png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？
 
@@ -917,6 +949,29 @@
 		引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定。如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体
 
 	![Stated Clearly Image](http://www.w3school.com.cn/i/ct_js_value.gif)
+-  深拷贝和浅拷贝  
+	浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。但深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。
+	浅拷贝
+
+		var obj1 = { a: 10, b: 20, c: 30 };
+		var obj2 = obj1;
+		obj2.b = 100;
+		console.log(obj1);
+		// { a: 10, b: 100, c: 30 } <-- b 被改到了
+		console.log(obj2);
+		// { a: 10, b: 100, c: 30 } 
+		浅拷贝共用的还是同一块内存，所以改变obj2 的属性，内存里面的属性还是会被改变
+
+	深拷贝是重新创建一个对象，对象只有一层的话可以使用上面的：Object.assign()函数 
+
+		Object.assign({},obj1)的意思是先建立一个空对象{}，接着把obj1中所有的属性复制过去，所以obj2会长得跟obj1一样，这时候再修改obj2.b也不会影响obj1。
+		因为Object.assign跟我们手动复制的效果相同，所以一样只能处理深度只有一层的对象，没办法做到真正的 Deep Copy。不过如果要复制的对象只有一层的话可以考虑使用它。
+
+- Javascript如何实现继承？ 
+	1.通过原型链
+	2.通过构造函数
+	3.通过原型
+	4.通过call和apply 方法
 
 - 如何将字符串转化为数字，例如'12.3b'?
 
