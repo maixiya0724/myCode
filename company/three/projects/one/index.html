@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport" />
+		<title>好友红包</title>
+		<script type="text/javascript">
+			! function(a, b) {
+				function d() {
+					var a = document.documentElement,
+						b = 750;
+					a.style.fontSize = 100 * (a.clientWidth / b) + "px"
+				}
+				a.addEventListener && (document.documentElement, d(), setTimeout(function() {
+						d()
+					}, 300),
+					b.addEventListener("DOMContentLoaded", d, !1),
+					a.addEventListener("resize", d, !1),
+					a.addEventListener("load", d, !1))
+			}(window, document);
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<div class="main">
+			<div class="qiandao" style="display: none;">
+				<div>
+					<img src="img/header_01.png" alt="" />
+					<p><span>南南方南方方</span>邀请您签到</p>
+				</div>
+				<p>￥4.21</p>
+				<p class="receive-hb">前往APP签到领取红包</p>
+			</div>
+			<!-- 邀请好友一起领红包 页面的头部 -->
+			<div class="mainShare">
+				
+			</div>
+			
+			<ul class="friend-number">
+				<p class="friend-number-text">共<span>5</span>位好友，可领<span>1</span>个红包</p>
+				<li>
+					<img src="img/header_02.png" alt="" />
+					<img class="taskHeadHb taskHeadHb-ani" src="img/taskHeadHb02.jpg" alt="" />
+					<p>南岗印尼</p>
+					<p class="li-gray-text">今日已签到</p>
+				</li>
+				<li>
+					<img src="img/header_02.png" alt="" />
+					<p>曾国藩</p>
+					<p class="double-fold">邀请翻倍</p>
+					<p class="li-red-text">12:25:36 内邀请，红包翻倍</p>
+				</li>
+				<li>
+					<img src="img/header_02.png" alt="" />
+					<p>奥斯卡</p>
+					<p class="double-fold">邀请翻倍</p>
+					<p class="li-red-text">12:25:36 内邀请，红包翻倍</p>
+				</li>
+				<li>
+					<img src="img/header_02.png" alt="" />
+					<p>南方</p>
+					<p class="double-fold wechat-invited">微信邀请</p>
+					<p class="li-red-text">未签到 红包不可领取</p>
+				</li>
+				<li>
+					<img src="img/header_02.png" alt="" />
+					<p>奥斯卡</p>
+					<p class="li-red-text have-receive">已领取1.00元</p>
+					<p class="li-gray-text">今日已签到</p>
+				</li>
+			</ul>
+			
+			<ul class="friend-number invited-newUser">
+				<p class="friend-number-text">邀请以下新用户得<span>4</span>元</p>
+				<li>
+					<img src="img/header_02.png" alt="" />
+					<p>南方</p>
+					<p class="double-fold wechat-invited">微信邀请</p>
+					<p class="li-red-text">未签到 红包不可领取</p>
+				</li>
+				<li>
+					<img src="img/header_02.png" alt="" />
+					<p>南方</p>
+					<p class="double-fold wechat-invited">微信邀请</p>
+					<p class="li-red-text">未签到 红包不可领取</p>
+				</li>
+			</ul>
+			
+			<p class="friend-ceiling">好友上限为30人哦...</p>
+
+			<!-- 毛细亚 -->
+			<div class="mianBottom">
+				<div class="btmBtn">
+					<div class="img"></div>
+					<span>添加好友</span>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="tanchuang-bg" style="display: none;">
+			
+			<div class="tc-gotoapp">
+				<p>前往App领取现金红包</p>
+				<img src="img/taskHeadHb02.jpg" alt="" />
+				<p>去领取</p>
+			</div>
+			
+		</div>
+
+		<!-- 毛细亚 -->
+		<div class="layer">
+			<div class="layerContent">
+				<div class="close"></div>
+				<p class="layerText">恭喜您获得</p>
+			</div>
+
+		</div>
+
+
+
+
+
+	</body>
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+
+		$(".receive-hb").click(function(){
+			$(this).text("分享签到链接 继续赚现金");
+		})
+		
+		
+	</script>
+
+</html>

@@ -1,0 +1,327 @@
+/*html,body{
+	width: 100%;
+	height: 100%;
+}*/
+.main{
+	/*width: 100%;
+	height: 100%;*/
+	background-color: #f5f5f5;
+	padding-bottom: 2rem;
+}
+
+.qiandao{
+	width: 7.5rem;
+	height: 4.9rem;
+	background: url(../img/qiandao-bg.jpg) 50% 50% no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+.qiandao>div{
+	height: .5rem;
+	margin: .3rem auto 0;
+	text-align: center;
+}
+
+.qiandao>div img{
+	display: inline-block;
+	width: .5rem;
+	height: .5rem;
+	border-radius: 50%;
+	margin-top: -.1rem;
+}
+
+.qiandao>div p{
+	display: inline-block;
+	/*width: 2.3rem;*/
+	height: .5rem;
+	margin-left: .05rem;
+	font-size: .3rem;
+}
+.qiandao>p{
+	text-align: center;
+	margin-top: 1.3rem;
+	font-size: 1rem;
+	font-weight: bold;
+	color: #fff;
+	position: relative;
+}
+
+.qiandao>p:nth-of-type(1):after{
+	content: "可提现";
+	padding: .05rem .17rem;
+	position: absolute;
+	right: 1.2rem;
+    top: .1rem;
+	background-color: #ffe76f;
+	font-size: .23rem;
+	color: #fd202a;
+	border-radius: 10rem;
+	font-weight: 400;
+	border-bottom-left-radius: 0;
+	
+}
+
+.qiandao>p:nth-of-type(2){
+	width: 6rem;
+	height: 1rem;
+	margin: 0 auto;
+	border-radius: 10rem;
+	background-color: #ffe76f;
+	text-align: center;
+	line-height: 1rem;
+	color: #fd202a;
+	font-size: .4rem;
+	font-weight: 400;
+}
+
+.friend-number{
+	width: 7.2rem;
+	margin: 0 auto;
+	background-color: #f5f5f5;
+}
+
+.friend-number .friend-number-text{
+	font-size: .25rem;
+	line-height: .7rem;
+	color: #666;
+}
+
+.friend-number li{
+	/*width: 7.2rem;*/
+	width: 6.8rem;
+	/*height: 1.5rem;*/
+	height: 1rem;
+	padding: .25rem .2rem;
+	background-color: #fff;
+	margin-bottom: .15rem;
+	border-radius: 5px;
+}
+
+.friend-number li img{
+	width: 1rem;
+	height: 1rem;
+	float: left;
+	margin-right: .2rem;	
+}
+
+.friend-number li p{
+	width: 3.7rem;
+	height: .5rem;
+	float: left;
+	font-size: .3rem;
+	line-height: .5rem;
+}
+
+.friend-number li p.li-gray-text{
+	font-size: .23rem;
+	color: #afaeae;
+}
+
+.friend-number li p.li-red-text{
+	font-size: .23rem;
+	color: #ff5555;
+}
+
+.friend-number li img.taskHeadHb{
+	width: .42rem;
+	height: .53rem;
+	float: right;
+	margin: .235rem .5rem 0 0;
+	
+}
+
+.friend-number li img.taskHeadHb-ani{
+	animation: taskHeadHb 1s .15s linear infinite
+}
+
+@keyframes taskHeadHb {
+	10% {
+		transform: rotate(30deg)
+	}
+	20% {
+		transform: rotate(-25deg)
+	}
+	30% {
+		transform: rotate(15deg)
+	}
+	40% {
+		transform: rotate(-15deg)
+	}
+	50%,
+	100% {
+		transform: rotate(0deg)
+	}
+}
+
+/*邀请翻倍*/
+
+.friend-number li p.double-fold{
+	float: right;
+	width: 1.5rem;
+	height: .55rem;
+	background-color: #ff5555;
+	color: #fff;
+	text-align: center;
+	line-height: .55rem;
+	/*display: flex;
+	align-items: center;
+	justify-content: center;*/
+	font-size: .27rem;
+	border-radius: 10rem;
+	margin-top: .225rem;
+}
+
+/*微信邀请*/
+
+.friend-number li p.wechat-invited{
+	border: 1px solid #ff5555;
+	background-color: #fff;
+	color: #ff5555;
+}
+
+.friend-number li p.have-receive{
+	float: right;
+	width: 1.5rem;
+	height: 1rem;
+	text-align: right;
+	line-height: 1rem;
+}
+
+.friend-ceiling{
+	height: 1.2rem;
+	width: 100%;
+	line-height: 1.2rem;
+	text-align: center;
+	font-size: .25rem;
+	color: #999;
+}
+
+
+/*弹窗*/
+
+.tanchuang-bg{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.5);
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+.tanchuang-bg>div{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	/*background-color: #fff;*/
+	background-color: cyan;
+	border-radius: 7px;
+}
+
+.tanchuang-bg .tc-gotoapp{
+	width: 5.4rem;
+	height: 5.7rem;
+}
+
+.tanchuang-bg .tc-gotoapp p{
+	text-align: center;
+	height: 1rem;
+	line-height: 1rem;
+	border-bottom: 1px dashed #ccc;
+	color: #ff5555;
+	font-size: .37rem;
+}
+
+.tanchuang-bg .tc-gotoapp img{
+	display: block;
+	width: 1.5rem;
+	height: 2rem;
+	margin: .7rem auto 0;
+	border-radius: 7px;
+}
+
+
+/* 毛细亚新增css */
+
+.mianBottom{
+	width: 100%;
+	height: 2rem;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #f5f5f5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btmBtn{
+	width: 5.9rem;
+	height: 1rem;
+	background: #ff5555;
+	border-radius: 0.5rem;
+	box-shadow: 0 5px 4px -4px #ff5555;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 0.34rem;
+}
+.btmBtn .img{
+	width: 0.35rem;
+	height: 0.35rem;
+	background: url("../img/save.png");
+	background-size: 100% 100%;
+	margin-right:0.1rem;
+}
+
+.main .mainShare{
+	width: 100%;
+	height: 2.4rem;
+	background: url("../img/mainShare.png");
+	background-size: 100% 100%;
+}
+
+.layer{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.layerContent{
+	width: 6.4rem;
+	height: 6.7rem;
+	background: url("../img/hotGIft.png");
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.layerContent .close{
+	width: 0.5rem;
+	height: 0.5rem;
+	background: url("../img/close.png");
+	background-size: 100% 100%;
+	position: absolute;
+	top: -0.6rem;
+	right: 0.2rem;
+
+}
+
+.layerContent .layerText{
+	width: 100%;
+	font-size: 12px;
+	color: #333333;
+}
+
+
