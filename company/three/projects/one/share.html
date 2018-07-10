@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport" />
+    <title>好友红包</title>
+    <script type="text/javascript">
+    ! function(a, b) {
+        function d() {
+            var a = document.documentElement,
+                b = 750;
+            a.style.fontSize = 100 * (a.clientWidth / b) + "px"
+        }
+        a.addEventListener && (document.documentElement, d(), setTimeout(function() {
+                d()
+            }, 300),
+            b.addEventListener("DOMContentLoaded", d, !1),
+            a.addEventListener("resize", d, !1),
+            a.addEventListener("load", d, !1))
+    }(window, document);
+    </script>
+    <style type="text/css">
+    :focus,a:active,a:focus,a:hover{outline:0}button,img,input{vertical-align:middle}.cl,.clearfix,a.ie6:hover{zoom:1}.friend-number li img.taskHeadHb-ani,.layer .invSuccess .peopleText .hotImg{animation:taskHeadHb 1s .15s linear infinite}*{word-wrap:break-word}body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,html,iframe,input,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}dl,ol,ul{list-style-type:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}button,input,optgroup,option,select,textarea{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}button,input{overflow:visible;outline:0}.qiandao,svg:not(:root){overflow:hidden}body,button,input,select,td,textarea,th{font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif,"WenQuanYi Micro Hei","\5B8B\4F53";font-size:12px;color:#333;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}body{line-height:1.6}h1,h2,h3,h4,h5,h6{font-size:100%}a{text-decoration:none;cursor:pointer}a:hover{text-decoration:underline}sub,sup{vertical-align:baseline}button,input[type=button],input[type=submit]{line-height:normal!important}img{border:0}a img,img{-ms-interpolation-mode:bicubic}.img-responsive{max-width:100%;height:auto}address,article,aside,details,figcaption,figure,footer,header,hgroup,legend,menu,nav,section{display:block;margin:0;padding:0}time{display:inline}audio,canvas,video{display:inline-block}audio:not([controls]){display:none}legend{width:100%;margin-bottom:20px;font-size:21px;line-height:40px;border:0;border-bottom:1px solid #e5e5e5}legend small{font-size:15px;color:#999}fieldset{padding:.35em .625em .75em;margin:0 2px;border:1px solid silver}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}.cl:after,.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.qiandao>div img,.qiandao>div p{display:inline-block;height:.5rem}.main{width:100%;height:100%;background-color:#f5f5f5;padding-bottom:2rem}.qiandao{width:7.5rem;height:4.9rem;background:url(img/qiandao-bg.jpg) 50% 50% no-repeat;background-size:100% 100%}.qiandao>div{height:.5rem;margin:.3rem auto 0;text-align:center}.qiandao>div img{width:.5rem;border-radius:50%;margin-top:-.1rem}.qiandao>div p{margin-left:.05rem;font-size:.3rem}.qiandao>p{text-align:center;margin-top:1.3rem;font-size:1rem;font-weight:700;color:#fff;position:relative}.qiandao>p:nth-of-type(1):after{content:"可提现";padding:.05rem .17rem;position:absolute;right:1.2rem;top:.1rem;background-color:#ffe76f;font-size:.23rem;color:#fd202a;border-radius:10rem 10rem 10rem 0;font-weight:400}.qiandao>p:nth-of-type(2){width:6rem;height:1rem;margin:0 auto;border-radius:10rem;background-color:#ffe76f;text-align:center;line-height:1rem;color:#fd202a;font-size:.4rem;font-weight:400}.friend-number{width:7.2rem;margin:0 auto;background-color:#f5f5f5}.friend-number .friend-number-text{font-size:.25rem;line-height:.7rem;color:#666}.friend-number li{width:6.8rem;height:1rem;padding:.25rem .2rem;background-color:#fff;margin-bottom:.15rem;border-radius:5px}.friend-number li img{width:1rem;height:1rem;float:left;margin-right:.2rem}.friend-number li p{width:3.7rem;height:.5rem;float:left;font-size:.3rem;line-height:.5rem}.friend-number li p.li-gray-text{font-size:.23rem;color:#afaeae}.friend-number li p.li-red-text{font-size:.23rem;color:#f55}.friend-number li img.taskHeadHb{width:.42rem;height:.53rem;float:right;margin:.235rem .5rem 0 0}@keyframes taskHeadHb{10%{transform:rotate(30deg)}20%{transform:rotate(-25deg)}30%{transform:rotate(15deg)}40%{transform:rotate(-15deg)}100%,50%{transform:rotate(0)}}.layer .invSuccess,.layer .layerContent,.layer .ruleContent{transform:translate(-50%,-50%)}.friend-number li p.double-fold{float:right;width:1.5rem;height:.55rem;background-color:#f55;color:#fff;text-align:center;line-height:.55rem;font-size:.27rem;border-radius:10rem;margin-top:.225rem}.friend-number li p.wechat-invited{border:1px solid #f55;background-color:#fff;color:#f55}.friend-number li p.have-receive{float:right;width:1.5rem;height:1rem;text-align:right;line-height:1rem}.friend-ceiling{height:1.2rem;width:100%;line-height:1.2rem;text-align:center;font-size:.25rem;color:#999}.tanchuang-bg{width:100%;height:100%;background-color:rgba(0,0,0,.5);position:fixed;left:0;top:0}.tanchuang-bg>div{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;background-color:#0ff;border-radius:7px}.tanchuang-bg .tc-gotoapp{width:5.4rem;height:5.7rem}.tanchuang-bg .tc-gotoapp p{text-align:center;height:1rem;line-height:1rem;border-bottom:1px dashed #ccc;color:#f55;font-size:.37rem}.tanchuang-bg .tc-gotoapp img{display:block;width:1.5rem;height:2rem;margin:.7rem auto 0;border-radius:7px}.btmBtn,.mianBottom{display:flex;justify-content:center}.mianBottom{width:100%;height:2rem;position:fixed;left:0;bottom:0;background:rgba(245,245,245,.2);align-items:center}.btmBtn{width:5.9rem;height:1rem;background:#f55;border-radius:.5rem;box-shadow:0 5px 4px -4px #f55;align-items:center;color:#fff;font-size:.34rem}.btmBtn .img{width:.35rem;height:.35rem;background:url(img/save.png);background-size:100% 100%;margin-right:.1rem}.main .mainShare{width:100%;height:2.4rem;background:url(img/mainShare.png);background-size:100% 100%;position:relative}.main .mainShare .rule{width:.8rem;height:.5rem;background:#008cdd;border-radius:.25rem 0 0 .25rem;position:absolute;right:0;top:.2rem;color:#fff;font-size:.26rem;text-align:center;line-height:.5rem}.layer{width:100%;height:100%;position:fixed;left:0;top:0;bottom:0;right:0;background:rgba(0,0,0,.5)}.layer .layerContent{width:6.05rem;height:6.55rem;position:absolute;left:50%;top:50%}.layer .layerContent .hotBgImg{width:100%;height:100%;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1}.layer .layerContent .close{width:.5rem;height:.5rem;background:url(img/close.png);background-size:100% 100%;position:absolute;top:-.9rem;right:.2rem}.layer .layerContent .layerText{width:100%;font-size:14px;color:#333;text-align:center;margin-top:.8rem;line-height:.6rem;height:.6rem}.layer .layerContent .moneyNum{width:1.3rem;height:.75rem;line-height:.75rem;margin:0 auto;text-align:center;font-size:14px}.layer .layerContent .moneyNum .num{font-size:.45rem;color:#f6414b}.layer .layerContent .layerInfo{width:2.8rem;height:.8rem;color:#5d191b;text-align:center;font-size:14px;line-height:.45rem;margin:1.7rem auto 0}.layer .layerContent .layerBtm{width:4.8rem;height:1rem;color:#d92d25;font-size:20px;margin:.4rem auto 0;line-height:1rem;text-align:center;background:linear-gradient(to right,#ffb800,#ffe300);border-radius:.5rem;font-weight:550}.layer .ruleContent{width:6.05rem;height:6.9rem;background:#fff;border-radius:.2rem;position:absolute;top:50%;left:50%}.layer .ruleContent .title{width:100%;height:1.1rem;line-height:1.1rem;text-align:center;color:#f55;font-size:.36rem;position:relative;border-bottom:.5px dashed #ccc}.layer .ruleContent .title .close{display:block;background:url(img/closeTitle.png);background-size:100% 100%;width:.23rem;height:.23rem;position:absolute;top:.3rem;right:.3rem}.layer .ruleContent .ruleText{width:5.15rem;height:5.2rem;margin:.2rem auto 0;padding-right:.8rem;overflow-y:scroll}.layer .ruleContent .ruleText .ruleScroll{width:5.2rem;font-size:12px;color:#333;line-height:.4rem;height:.4rem;position:relative;left:.4rem}.layer .ruleContent .peopleInfo{width:5.15rem;height:5.2rem;margin:.2rem auto 0;display:flex;justify-content:center;align-items:center;flex-direction:column}.layer .ruleContent .peopleInfo .titleImg{width:1.6rem;height:1.6rem;border-radius:.8rem;background:url(img/img.png);background-size:100% 100%}.layer .ruleContent .peopleInfo .peopleInfo{width:100%;height:.56rem;line-height:.56rem;font-size:.17rem;color:#666;display:flex;flex-direction:row}.layer .invSuccess{width:5.6rem;height:5.8rem;background:#fff;border-radius:.2rem;position:absolute;top:50%;left:50%}.layer .invSuccess .title{width:100%;height:1.1rem;line-height:1.1rem;text-align:center;color:#000;font-size:.36rem;position:relative}.layer .invSuccess .title p{position:relative;top:.2rem;width:100%;height:1rem;overflow:hidden}.layer .invSuccess .title .close{display:block;background:url(img/closeTitle.png);background-size:100% 100%;width:.23rem;height:.23rem;position:absolute;top:.3rem;right:.3rem}.layer .invSuccess .peopleInfo{width:100%;height:2.6rem;display:flex;justify-content:center;align-items:center;flex-direction:column}.layer .invSuccess .peopleInfo .titleImg{width:1.7rem;height:1.7rem;border-radius:.85rem;overflow:hidden}.layer .invSuccess .peopleInfo .titleImg img{width:100%;height:100%}.layer .invSuccess .peopleText{display:flex;flex-direction:row;justify-content:center;align-items:center;width:100%;font-size:.35rem;height:.56rem;line-height:.56rem;color:#666}.layer .invSuccess .peopleText span{color:#f55;margin:0 .1rem}.layer .invSuccess .peopleText .hotImg{width:.3rem;height:.4rem;background:url(img/hotIcon.png);background-size:100% 100%}.layer .invSuccess .shareBtn{width:4.65rem;height:1.04rem;display:flex;justify-content:center;align-items:center;font-size:.36rem;color:#fff;background:#ea614e;border-radius:.52rem;margin:.1rem auto 0}.noBody{width:100%;height:7rem;display:flex;justify-content:center;align-items:center}.noBody .img{width:2.2rem;height:1.9rem}.noBody .img img{width:100%;height:100%} .layerTextBottom{width: 2.6rem;height: 1rem;position: fixed;top:50%;left: 50%;transform: translate(-50%,-50%);background: rgba(0,0,0,0.5);color: #fff;font-size: 14px;text-align: center;padding-top: 0.15rem;border-radius: 0.1rem;}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- 邀请好友一起领红包 页面的头部 -->
+        <div class="mainShare">
+            <div class="rule">规则</div>
+        </div>
+        <ul class="friend-number">
+            <p class="friend-number-text">共<span>5</span>位好友，可领<span>1</span>个红包</p>
+            <li>
+                <img src="img/header_02.png" alt="" />
+                <img class="taskHeadHb taskHeadHb-ani getHot" src="img/taskHeadHb02.jpg" alt="" />
+                <p>南岗印尼</p>
+                <p class="li-gray-text">今日已签到</p>
+            </li>
+            <li>
+                <img src="img/header_02.png" alt="" />
+                <p>曾国藩</p>
+                <p class="double-fold activeInv">邀请翻倍</p>
+                <p class="li-red-text">12:25:36 内邀请，红包翻倍</p>
+            </li>
+            <li>
+                <img src="img/header_02.png" alt="" />
+                <p>奥斯卡</p>
+                <p class="double-fold activeInv">邀请翻倍</p>
+                <p class="li-red-text">12:25:36 内邀请，红包翻倍</p>
+            </li>
+            <li>
+                <img src="img/header_02.png" alt="" />
+                <p>南方</p>
+                <p class="double-fold wechat-invited oldWInv">微信邀请</p>
+                <p class="li-red-text">未签到 红包不可领取</p>
+            </li>
+            <li>
+                <img src="img/header_02.png" alt="" />
+                <p>奥斯卡</p>
+                <p class="li-red-text have-receive">已领取1.00元</p>
+                <p class="li-gray-text">今日已签到</p>
+            </li>
+        </ul>
+        <!-- 没有 好友时的缺省图 -->
+        <ul class="friend-number" style="display: none;">
+        	<p class="friend-number-text">共<span>0</span>位好友，可领<span>0</span>个红包</p>
+        	<div class="noBody">
+        		<div class="img">
+        			<img src="./img/kong.png" alt="">
+        		</div>
+        	</div>
+        </ul>
+
+        <ul class="friend-number invited-newUser">
+            <p class="friend-number-text">邀请以下新用户得<span>4</span>元</p>
+            <li>
+                <img src="img/header_02.png" alt="" />
+                <p style="width: 3rem;">南方</p>
+                <p  class="double-fold wechat-invited shareGetMoney" style="width: 2.2rem;color: #fff;background: #ff5555;">分享立得现金</p>
+                <p style="width: 3rem;" class="li-red-text">未签到 红包不可领取</p>
+            </li>
+            <li>
+                <img src="img/header_02.png" alt="" />
+                <p>南方</p>
+                <p class="double-fold wechat-invited weixinInv" >微信邀请</p>
+                <p class="li-red-text">成功邀请得 4 元</p>
+            </li>
+        </ul>
+        <p class="friend-ceiling">好友上限为30人哦...</p>
+        <!-- 毛细亚 -->
+        <div class="mianBottom">
+            <div class="btmBtn">
+                <div class="img"></div>
+                <span>添加好友</span>
+            </div>
+        </div>
+    </div>
+
+    <!--  邀请好友的弹窗 -->
+    <div class="layer" style="display: none;">
+        <div class="layerContent">
+
+            <div class="close"></div>
+            <p class="layerText">恭喜您获得</p>
+            <div class="moneyNum">
+                <span class="num">0.21</span>元
+            </div>
+            <p class="layerInfo">邀请更多好友签到里领取更多红包</p>
+            <div class="layerBtm">去邀请 赚更多</div>
+        </div>
+    </div>
+    <!--  活动规则的弹窗 -->
+    <div class="layer ruleLayer" style="display: none;">
+        <div class="ruleContent">
+            <div class="title">
+                活动规则
+                <span class="close"></span>
+            </div>
+            <div class="ruleText">
+                <div class="ruleScroll">
+                    <p>1. 每天通过微信分享签到链接给微信好 友，好友点击链接后进入签到页面即为好友（群聊和朋友圈分享可能导致添加失败哦 </p>
+                    <p>1. 每天通过微信分享签到链接给微信好 友，好友点击链接后进入签到页面即为好友（群聊和朋友圈分享可能导致添加失败哦 </p>
+                    <p>1. 每天通过微信分享签到链接给微信好 友，好友点击链接后进入签到页面即为好友（群聊和朋友圈分享可能导致添加失败哦 </p>
+                    <p>1. 每天通过微信分享签到链接给微信好 友，好友点击链接后进入签到页面即为好友（群聊和朋友圈分享可能导致添加失败哦 </p>
+                    <p>1. 每天通过微信分享签到链接给微信好 友，好友点击链接后进入签到页面即为好友（群聊和朋友圈分享可能导致添加失败哦 </p>
+                    <p>1. 每天通过微信分享签到链接给微信好 友，好友点击链接后进入签到页面即为好友（群聊和朋友圈分享可能导致添加失败哦 </p>
+                    <p>1. 每天通过微信分享签到链接给微信好 友，好友点击链接后进入签到页面即为好友（群聊和朋友圈分享可能导致添加失败哦 </p>
+                    <p>1. 每天通过微信分享签到链接给微信好 友，好友点击链接后进入签到页面即为好友（群聊和朋友圈分享可能导致添加失败哦 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  红包详情弹窗 -->
+    <div class="layer hotGiftDetails" style="display: none;">
+        <div class="layerContent">
+        	<img src="img/gift.png" class="hotBgImg" alt="">
+            <div class="close"></div>
+            <p class="layerText">恭喜您获得</p>
+            <div class="moneyNum">
+                <span class="num">0.21</span>元
+            </div>
+            <p class="layerInfo">邀请更多好友签到里领取更多红包</p>
+            <div class="layerBtm">前往邀请</div>
+        </div>
+    </div>
+    <!--  成功邀请弹窗 -->
+    <div class="layer shareInvSuccess" style="display:none;">
+        <div class="invSuccess">
+            <div class="title">
+                <p>邀请 <span class="invName">奥斯卡</span></p>
+                <span class="close"></span>
+            </div>
+            <div class="peopleInfo">
+                <div class="titleImg">
+                    <img src="img/img.png" alt="">
+                </div>
+            </div>
+            <p class="peopleText">成功邀请获得 <span> 4元 </span> 红包</p>
+            <div class="shareBtn">分享得现金</div>
+        </div>
+    </div>
+    <!--  分享得现金 -->
+    <div class="layer getMoney" style="display: none;">
+        <div class="invSuccess">
+            <div class="title">
+                <p>邀请 <span class="invName">奥斯卡</span></p>
+                <span class="close"></span>
+            </div>
+            <div class="peopleInfo">
+                <div class="titleImg">
+                    <img src="img/img.png" alt="">
+                </div>
+            </div>
+            <p class="peopleText">分享即可领取现金红包</p>
+            <div class="shareBtn">分享领现金</div>
+        </div>
+    </div>
+    <!--  微信邀请 -->
+    <div class="layer weiInv" style="display: none;">
+        <div class="invSuccess">
+            <div class="title">
+                <p style="line-height: ">今天 <span style="color:#ff5555;">24点前</span> 邀请 <span class="name">啦啦啦</span>签到 fdfadafdas</p>
+                <span class="close" style="top: 0.2rem;"></span>
+            </div>
+            <div class="peopleInfo">
+                <div class="titleImg">
+                    <img src="img/img.png" alt="">
+                </div>
+            </div>
+            <p class="peopleText"> <span class="hotImg"></span> 邀请签到得红包</p>
+            <div class="shareBtn">发送邀请签到</div>
+        </div>
+    </div>
+    <!--  邀请弹窗 -->
+    <div class="layer inavLayer" style="display: none;">
+        <div class="invSuccess">
+            <div class="title">
+                <p style="line-height: ">今天 <span style="color:#ff5555;">24点前</span> 邀请 <span class="name">曾国藩</span>签到 fdfadafdas</p>
+                <span class="close" style="top: 0.2rem;"></span>
+            </div>
+            <div class="peopleInfo">
+                <div class="titleImg">
+                    <img src="img/img.png" alt="微信图片">
+                </div>
+            </div>
+            <p class="peopleText"> <span class="hotImg"></span> 红包金额翻倍</p>
+            <div class="shareBtn">发送邀请签到</div>
+        </div>
+    </div>
+    <!-- 落地提示框 当所有好友都没有的时候, 显示这个弹窗 -->
+    <div class="layerTextBottom" style="display:none;">该好友分享得现金 次数已达上线</div>
+</body>
+<script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".close").click(function() {
+        $(".layer").hide()
+    })
+
+    $(".rule").click(function(){// 红包规则
+    	$(".ruleLayer").show()
+    })
+
+
+    $(".getHot").click(function() { // 红包详情
+    	$(".hotGiftDetails").show()
+    })
+
+    $(".activeInv").click(function() { // 邀请翻倍
+    	$(".inavLayer").show()
+
+    })
+    $(".shareGetMoney").click(function(){// 分享得现金
+    	$(".getMoney").show()
+    })
+     $(".oldWInv").click(function(){// 微信邀请
+        $(".weiInv").show()
+    })
+    $(".weixinInv").click(function(){// 微信邀请新用户
+        $(".shareInvSuccess").show()
+    })
+    $(".btmBtn").click(function(){ // 添加好友
+    	window.location.href="shared.html"
+    })
+    $(".ruleScroll").scroll(function(event) {// 阻止window 的默认事件
+    	/* Act on the event */
+    	document.addEventListener("onscroll",function(){
+    		e.preventDefault()
+    	})
+
+    });
+
+});
+</script>
+
+</html>
