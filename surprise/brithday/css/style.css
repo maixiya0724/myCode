@@ -6,6 +6,9 @@
 .fp-slidesNav ul li a span {
     border-color:#fff;
 }
+p{
+	font-size: 24px !important;
+}
 
 .bgcolor {
 	background: #ee9ca7;
